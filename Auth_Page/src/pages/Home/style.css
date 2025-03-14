@@ -1,0 +1,236 @@
+/* style.css */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    text-align: left;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+.header h1 {
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 10px;
+
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+@media (max-width: 968px) {
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: auto;
+        margin: 0 auto;
+        padding: 0;
+        margin-inline: 10px;
+    }
+    .container .main-content .user-form-container {
+        width: 100vw;
+        height: auto;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .user-form-container h2 {
+        padding-inline-end: 15%;
+    }
+
+    .container .main-content .user-form-container .user-form {
+        width: 95%;  /* Agora ocupa toda a largura */
+        max-width: 100vw; 
+        box-sizing: border-box; /* Garante que padding não aumente o tamanho total */
+        padding-inline-end: 15%;
+    }
+}
+
+/* Form Styles */
+.user-form-container {
+    border-radius: 8px;
+    padding: 20px;
+    height: 400px;
+    flex-direction: column;
+    width: 50%;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);   
+}
+.user-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.user-form-container h2 {
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    background: linear-gradient(45deg, #ff8a00, #e52e71, #5a4fcf, #00d4ff);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 2s infinite linear;
+    
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.form-group input {
+    width: 100%;
+    background-color: #000;
+    padding-block: 10px;
+    border: none;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #de26ff;
+    outline: none;
+}
+.form-group input::placeholder{
+    color: #fff;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.5s ease;
+    margin-top: 10px;
+    background: linear-gradient(45deg, #ff8a00, #e52e71, #5a4fcf, #00d4ff);
+    background-size: 200% 200%;
+    color: #fff;
+    animation: gradientAnimation 2s infinite linear;
+}
+
+.btn-submit:hover {
+    background-color: transparent;
+    color: #fff;
+    box-shadow: 0px 0px 30px #fff;
+}
+
+/* Users List Styles */
+.users-list-container {
+    border-radius: 8px;
+    width: 100%;
+    padding-top: 50px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.users-list-container h2 {
+    font-size: 2.4rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    text-align: left;
+    background: linear-gradient(45deg, #ff8a00, #e52e71, #5a4fcf, #00d4ff);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 4s infinite linear;
+}
+
+.loading-message,
+.error-message,
+.empty-message {
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+}
+
+.error-message {
+    color: #ff2626;
+}
+
+.users-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.user-card {
+    display: flex;
+    justify-content: space-between;
+    background-color: #000;
+    border-radius: 6px;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.user-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0px 20px rgb(254, 254, 254);
+}
+
+.user-info {
+    flex: 1;
+}
+
+.user-info h3 {
+    background: linear-gradient(45deg, #ff8a00, #e52e71, #5a4fcf, #00d4ff);
+    background-size: 500% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 6s infinite linear;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.user-info p {
+    color: #fff;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.btn-delete {
+    background-color: #ff2626;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    height: 36px;
+    width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    align-self: center;
+}
+
+.btn-delete:hover {
+    background-color: transparent;
+    box-shadow: 0px 0px 30px #fff;
+}
